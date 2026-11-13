@@ -33,8 +33,9 @@ def C(**kw):
 
 # ---------------------------------------------------------------------------
 # B1  Basis path set for registration_decision()  (V(G) = 10, atomic-condition
-# convention).  P09 (enrolled > capacity -> WAITLISTED) is INFEASIBLE because
-# line 48 already rejects enrolled > capacity; documented in the report.
+# convention).  Before D4 was fixed, P09 (WAITLISTED) was infeasible because
+# line 48 rejected enrolled > capacity; the D4 fix (enrolled == capacity)
+# makes P09 reachable, and test_WB_P09 is the regression test for it.
 # ---------------------------------------------------------------------------
 def test_WB_P01_dues_negative_raises():                       # line 46 True
     with pytest.raises(ValueError, match="Invalid dues"):
@@ -70,6 +71,10 @@ def test_WB_P07_prerequisites_missing_branch():               # line 54 True
 
 def test_WB_P08_credit_limit_branch():                        # line 56 True
     assert registration_decision(S(current_credits=16), C()) == "CREDIT_LIMIT"
+
+
+def test_WB_P09_full_course_waitlisted():                     # line 58 True (after D4 fix)
+    assert registration_decision(S(), C(enrolled=30)) == "WAITLISTED"
 
 
 def test_WB_P10_registered_path_all_false():                  # lines 46-58 all False -> 60
