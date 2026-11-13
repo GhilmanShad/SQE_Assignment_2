@@ -1,6 +1,6 @@
 # Defect log (copy each block into a GitHub Issue — C3)
 
-Status: **Fixed** in PR [#4](https://github.com/GhilmanShad/SQE_Assignment_2/pull/4), tracked by issues [#5](https://github.com/GhilmanShad/SQE_Assignment_2/issues/5)–[#9](https://github.com/GhilmanShad/SQE_Assignment_2/issues/9). The same changes are kept in `docs/defect_fixes.patch`.
+Status: **Fixed** in PR [#10](https://github.com/GhilmanShad/SQE_Assignment_2/pull/10), tracked by issues [#5](https://github.com/GhilmanShad/SQE_Assignment_2/issues/5)–[#9](https://github.com/GhilmanShad/SQE_Assignment_2/issues/9). The same changes are kept in `docs/defect_fixes.patch`.
 
 | ID | Req | Title | Failing test IDs (initial run) | Expected | Actual |
 |----|-----|-------|-------------------------------|----------|--------|

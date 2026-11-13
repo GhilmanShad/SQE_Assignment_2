@@ -1,29 +1,38 @@
-# SE3002 Assignment 2 — Student Registration Module
+# SE3002 Assignment 2 — Student Course Registration System
 
-This is the **system under test** for black-box and white-box testing, not a reference-correct solution.
+This repository contains the black-box and white-box test suites for the supplied
+`registration.py` implementation. Expected results come from `REQUIREMENTS.md`
+(the SRS), not from the implementation.
 
-## Files
-- `registration.py`: Python application to test.
-- `REQUIREMENTS.md`: authoritative functional requirements, status strings, and sample scenarios.
-- `requirements.txt`: dependencies for test development.
+## Structure
 
-## Getting started
-```bash
-python -m pip install -r requirements.txt
-python -c "from registration import Student, Course, register_course; print(register_course(Student('S001'), Course('CS201', 3, 30)))"
+```
+registration.py                  system under test
+REQUIREMENTS.md                  software requirements specification
+requirements.txt                 pytest and pytest-cov
+tests/test_blackbox.py           ECP, BVA and decision-table tests
+tests/test_whitebox.py           CFG, branch, condition and MC/DC tests
+docs/                            test design sheets, CFG, evidence and report
+.github/workflows/tests.yml      CI: pytest + coverage on every push/PR
 ```
 
-## Suggested student workflow
-1. Derive ECP/BVA/decision table tests from `REQUIREMENTS.md` **without using implementation behavior as the expected result**.
-2. Create `tests/test_blackbox.py`, execute the cases, and log suspected defects as GitHub Issues.
-3. Inspect the code and develop `tests/test_whitebox.py` to exercise decisions, branches, conditions, and basis paths.
-4. Document CFG and manual MC/DC pairs for a selected function.
-5. Record failing tests faithfully. Do not alter expected results to force tests to pass.
-6. Make any defect fixes in a separate Pull Request with accompanying regression tests.
+## Run the tests
 
-Some tests may fail against the supplied source. This is intentional for the exercise.
+```bash
+python -m pip install -r requirements.txt
+python -m pytest tests/ -v
+python -m pytest tests/ -v --cov=registration --cov-branch --cov-report=term-missing
+```
 
-## Assignment 2 deliverables
-- `tests/test_blackbox.py`, `tests/test_whitebox.py`
-- `docs/` — design sheets, CFG, evidence runs, defect log, report
-- Run: `python -m pytest tests/ -v --cov=registration --cov-branch --cov-report=term-missing`
+## Current result
+
+`122 passed` with 100% statement and branch coverage of `registration.py`.
+
+The pre-fix evidence is kept in `docs/initial_blackbox_run.txt` and
+`docs/final_run_before_fixes.txt`. Defects D1–D5, their GitHub issues and the
+fix PR are listed in `docs/DEFECTS.md` and `docs/testing_report.pdf`.
+
+## Links
+
+- Repository: https://github.com/GhilmanShad/SQE_Assignment_2
+- Actions: https://github.com/GhilmanShad/SQE_Assignment_2/actions/workflows/tests.yml
