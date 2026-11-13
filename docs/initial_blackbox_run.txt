@@ -1,0 +1,96 @@
+# Evidence: initial black-box run BEFORE any fix (local stand-in runner, not real pytest)
+PASSED test_blackbox.py::test_check_credit_limit_returns[ECP-01] 
+PASSED test_blackbox.py::test_check_credit_limit_returns[ECP-03] 
+PASSED test_blackbox.py::test_check_credit_limit_returns[BVA-01] 
+PASSED test_blackbox.py::test_check_credit_limit_returns[BVA-02] 
+PASSED test_blackbox.py::test_check_credit_limit_returns[BVA-03] 
+FAILED test_blackbox.py::test_check_credit_limit_returns[BVA-04]   <- AssertionError:  (line 165)
+PASSED test_blackbox.py::test_check_credit_limit_returns[BVA-05] 
+FAILED test_blackbox.py::test_check_credit_limit_returns[BVA-06]   <- AssertionError:  (line 165)
+PASSED test_blackbox.py::test_check_credit_limit_raises[ECP-04] 
+PASSED test_blackbox.py::test_check_credit_limit_raises[ECP-18] 
+PASSED test_blackbox.py::test_check_credit_limit_raises[BVA-07] 
+PASSED test_blackbox.py::test_check_credit_limit_raises[BVA-08] 
+PASSED test_blackbox.py::test_check_credit_limit_raises[BVA-09] 
+PASSED test_blackbox.py::test_check_credit_limit_raises[BVA-10] 
+PASSED test_blackbox.py::test_check_credit_limit_raises[BVA-29] 
+PASSED test_blackbox.py::test_prerequisites_satisfied[ECP-19] 
+PASSED test_blackbox.py::test_prerequisites_satisfied[ECP-20] 
+FAILED test_blackbox.py::test_prerequisites_satisfied[ECP-21]   <- AssertionError:  (line 176)
+PASSED test_blackbox.py::test_prerequisites_satisfied[ECP-22] 
+PASSED test_blackbox.py::test_registration_decision_status[ECP-05+DT-07] 
+PASSED test_blackbox.py::test_registration_decision_status[ECP-06+ECP-12+BVA-12+DT-06] 
+FAILED test_blackbox.py::test_registration_decision_status[BVA-11]   <- AssertionError:  (line 183)
+FAILED test_blackbox.py::test_registration_decision_status[BVA-13]   <- AssertionError:  (line 183)
+FAILED test_blackbox.py::test_registration_decision_status[ECP-13+BVA-15+DT-05]   <- AssertionError:  (line 183)
+PASSED test_blackbox.py::test_registration_decision_status[BVA-14] 
+PASSED test_blackbox.py::test_registration_decision_status[BVA-16] 
+FAILED test_blackbox.py::test_registration_decision_status[BVA-17]   <- AssertionError:  (line 183)
+PASSED test_blackbox.py::test_registration_decision_status[ECP-16+DT-08] 
+PASSED test_blackbox.py::test_registration_decision_status[ECP-08] 
+PASSED test_blackbox.py::test_registration_decision_status[ECP-09] 
+FAILED test_blackbox.py::test_registration_decision_status[ECP-10+DT-09]   <- AssertionError:  (line 183)
+PASSED test_blackbox.py::test_registration_decision_status[ECP-11] 
+PASSED test_blackbox.py::test_registration_decision_status[ECP-02+DT-10] 
+FAILED test_blackbox.py::test_registration_decision_status[BVA-18]   <- AssertionError:  (line 183)
+FAILED test_blackbox.py::test_registration_decision_status[BVA-19]   <- AssertionError:  (line 183)
+PASSED test_blackbox.py::test_registration_decision_status[BVA-20] 
+PASSED test_blackbox.py::test_registration_decision_status[BVA-21] 
+PASSED test_blackbox.py::test_registration_decision_status[BVA-22] 
+PASSED test_blackbox.py::test_registration_decision_status[BVA-23] 
+FAILED test_blackbox.py::test_registration_decision_status[BVA-24]   <- AssertionError:  (line 183)
+FAILED test_blackbox.py::test_registration_decision_status[DT-01]   <- AssertionError:  (line 183)
+PASSED test_blackbox.py::test_registration_decision_status[DT-02] 
+PASSED test_blackbox.py::test_registration_decision_status[DT-03] 
+PASSED test_blackbox.py::test_registration_decision_status[DT-04] 
+FAILED test_blackbox.py::test_registration_decision_status[DT-11]   <- AssertionError:  (line 183)
+PASSED test_blackbox.py::test_registration_decision_status[DT-12] 
+PASSED test_blackbox.py::test_registration_decision_status[DT-13] 
+PASSED test_blackbox.py::test_registration_decision_raises[ECP-07+BVA-25] 
+PASSED test_blackbox.py::test_registration_decision_raises[ECP-14+BVA-26] 
+PASSED test_blackbox.py::test_registration_decision_raises[ECP-15] 
+PASSED test_blackbox.py::test_registration_decision_raises[BVA-27] 
+PASSED test_blackbox.py::test_registration_decision_raises[BVA-28] 
+PASSED test_blackbox.py::test_registration_decision_raises[DT-15] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[ECP-05+DT-07] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[ECP-06+ECP-12+BVA-12+DT-06] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[BVA-11] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[BVA-13] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[ECP-13+BVA-15+DT-05] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[BVA-14] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[BVA-16] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[BVA-17] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[ECP-16+DT-08] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[ECP-08] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[ECP-09] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[ECP-10+DT-09] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[ECP-11] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[ECP-02+DT-10] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[BVA-18] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[BVA-19] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[BVA-20] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[BVA-21] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[BVA-22] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[BVA-23] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[BVA-24] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[DT-01] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[DT-02] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[DT-03] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[DT-04] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[DT-11] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[DT-12] 
+PASSED test_blackbox.py::test_registration_decision_does_not_mutate[DT-13] 
+PASSED test_blackbox.py::test_register_success_updates_state 
+FAILED test_blackbox.py::test_register_unsuccessful_does_not_change_state[SC-dues]   <- AssertionError:  (line 220)
+PASSED test_blackbox.py::test_register_unsuccessful_does_not_change_state[SC-dup] 
+PASSED test_blackbox.py::test_register_unsuccessful_does_not_change_state[SC-prereq] 
+PASSED test_blackbox.py::test_register_unsuccessful_does_not_change_state[SC-credit] 
+FAILED test_blackbox.py::test_register_waitlisted_only_adds_to_waitlist   <- AssertionError:  (line 226)
+FAILED test_blackbox.py::test_register_waitlisted_twice_no_duplicate_entry   <- ValueError: Invalid capacity or enrollment (line 49)
+FAILED test_blackbox.py::test_register_full_course_never_exceeds_capacity   <- AssertionError:  (line 243)
+FAILED test_blackbox.py::test_withdraw_success_updates_state   <- AssertionError:  (line 252)
+PASSED test_blackbox.py::test_withdraw_not_registered_changes_nothing 
+FAILED test_blackbox.py::test_register_then_withdraw_restores_original_state   <- AssertionError:  (line 267)
+PASSED test_blackbox.py::test_registry_has_no_exact_duplicates 
+
+74 passed, 19 failed, 93 total
