@@ -1,4 +1,4 @@
-# SE3002 Assignment 2 — Testing Report (draft; export to PDF as docs/testing_report.pdf)
+# SE3002 Assignment 2 — Testing Report
 
 **Group:** Ghilman Shad Ali, Mohammad Ramzan, Atiq-ur-Rehman
 **Repository:** https://github.com/GhilmanShad/SQE_Assignment_2
@@ -11,6 +11,7 @@
 
 ## 2. White-box analysis (Part B)
 **CFG** (`docs/cfg.png`) of `registration_decision()`.
+
 | Convention | N | E | V(G)=E−N+2 | decisions+1 |
 |---|---|---|---|---|
 | Compound `not 0<=e<=cap or cap<1` = 1 predicate | 16 | 22 | 8 | 7+1 = 8 |
@@ -19,6 +20,7 @@
 **Basis paths (10):** P01 dues<0 · P02 A false · P03 A true,B false · P04 A,B true,C true · P05 DUES_BLOCK · P06 ALREADY · P07 PREREQ · P08 CREDIT · P09 WAITLISTED · P10 REGISTERED. Before the fix, **P09 was infeasible** because line 48 already rejected enrolled>capacity, so the old `enrolled > capacity` check at line 58 was dead code (D4). After the D4 fix (`enrolled == capacity`), P09 is reachable and is covered by `test_WB_P09_full_course_waitlisted` plus the black-box full-course cases. Tests: `test_WB_P01…P10`.
 
 **MC/DC, line 48** `not (A and B) or C` (A: 0<=enrolled, B: enrolled<=capacity, C: capacity<1), Python short-circuit shown as NE = not evaluated:
+
 | Test | A | B | C | Decision | Data |
 |---|---|---|---|---|---|
 | R1 | T | T | F | False | enrolled 10, cap 30 |
@@ -28,6 +30,7 @@
 Independence pairs: **A (R1,R4)**, **B (R1,R3)**, **C (R1,R2)**. Also done: lines 30/32 (3 tests each) and `register_course` line 70 (`X and Y`: pairs X (T1,T3), Y (T1,T2)).
 
 **Coverage** (pre-fix stages measured with a local tracer; the after-fix stage re-measured with `pytest-cov`):
+
 | Stage | Statement | Branch | Uncovered |
 |---|---|---|---|
 | Black-box only | 96.4% (53/55) | 92.3% (24/26) | line 59 `return "WAITLISTED"`; line 71 waitlist append |
@@ -38,7 +41,7 @@ Line 71 was covered by `test_WB_MCDC70_T1` using `mock.patch` on `registration_d
 ## 3. Defects (see docs/DEFECTS.md)
 D1 credit `<18` · D2 prerequisites any-vs-all · D3 dues threshold 1000 · D4 waitlist condition `>` (dead code) · D5 withdraw doesn't decrement enrolled.
 Issues: [#5](https://github.com/GhilmanShad/SQE_Assignment_2/issues/5) (D1), [#6](https://github.com/GhilmanShad/SQE_Assignment_2/issues/6) (D2), [#7](https://github.com/GhilmanShad/SQE_Assignment_2/issues/7) (D3), [#8](https://github.com/GhilmanShad/SQE_Assignment_2/issues/8) (D4), [#9](https://github.com/GhilmanShad/SQE_Assignment_2/issues/9) (D5).
-Fix PR: [#4](https://github.com/GhilmanShad/SQE_Assignment_2/pull/4). After fixes: **122/122 tests pass**.
+Fix PR: [#10](https://github.com/GhilmanShad/SQE_Assignment_2/pull/10) (merged). After fixes: **122/122 tests pass**.
 
 ## 4. GitHub Evidence and Contributions
 
@@ -46,7 +49,9 @@ Fix PR: [#4](https://github.com/GhilmanShad/SQE_Assignment_2/pull/4). After fixe
 **Workflow:** [tests.yml](https://github.com/GhilmanShad/SQE_Assignment_2/actions/workflows/tests.yml) — runs `pytest --cov` on every push and PR and uploads `test-results.xml`, `coverage.xml`, and `htmlcov/` as the `testing-evidence` artifact.
 
 - Pre-fix red run (19 failed, 83 passed): [43481845845](https://github.com/GhilmanShad/SQE_Assignment_2/actions/runs/43481845845)
-- Post-fix green run (122 passed, 100% statement/branch coverage): [43482957107](https://github.com/GhilmanShad/SQE_Assignment_2/actions/runs/43482957107)
+- Post-fix green run on `main` (122 passed, 100% statement/branch coverage): [43483968026](https://github.com/GhilmanShad/SQE_Assignment_2/actions/runs/43483968026)
+
+**Pull requests:** [#1](https://github.com/GhilmanShad/SQE_Assignment_2/pull/1) black-box tests (merged) · [#3](https://github.com/GhilmanShad/SQE_Assignment_2/pull/3) white-box tests and report (merged) · [#10](https://github.com/GhilmanShad/SQE_Assignment_2/pull/10) defect fixes (merged).
 
 ### Group Members and Contributions
 
