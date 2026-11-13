@@ -279,3 +279,7 @@ def test_registry_has_no_exact_duplicates():
         k = case_key("credit", row[1], row[3], row[4])
         assert k not in seen, f"{row[0]} duplicates {seen[k]}"
         seen[k] = row[0]
+    for row in PREREQ_CASES:
+        k = case_key("prerequisite", row[1], row[3], row[4], row[5])
+        assert k not in seen, f"{row[0]} duplicates {seen[k]}"
+        seen[k] = row[0]
