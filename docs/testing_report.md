@@ -46,7 +46,7 @@ Fix PR: [#4](https://github.com/GhilmanShad/SQE_Assignment_2/pull/4). After fixe
 **Workflow:** [tests.yml](https://github.com/GhilmanShad/SQE_Assignment_2/actions/workflows/tests.yml) — runs `pytest --cov` on every push and PR and uploads `test-results.xml`, `coverage.xml`, and `htmlcov/` as the `testing-evidence` artifact.
 
 - Pre-fix red run (19 failed, 83 passed): [43481845845](https://github.com/GhilmanShad/SQE_Assignment_2/actions/runs/43481845845)
-- Post-fix green run: see the latest `pytest` check on [PR #4](https://github.com/GhilmanShad/SQE_Assignment_2/pull/4/checks).
+- Post-fix green run (122 passed, 100% statement/branch coverage): [43482957107](https://github.com/GhilmanShad/SQE_Assignment_2/actions/runs/43482957107)
 
 ### Group Members and Contributions
 
