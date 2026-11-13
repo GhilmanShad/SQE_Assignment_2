@@ -37,5 +37,14 @@ Line 71 was covered by `test_WB_MCDC70_T1` using `mock.patch` on `registration_d
 ## 3. Defects (see docs/DEFECTS.md)
 D1 credit `<18` · D2 prerequisites any-vs-all · D3 dues threshold 1000 · D4 waitlist condition `>` (dead code) · D5 withdraw doesn't decrement enrolled. Issues: <#1…#5>. Fix PR: <link>. After fixes: 121/121 pass.
 
-## 4. GitHub evidence and contributions
-Repo: <link> · PRs: <links> · Actions runs (red before fix, green after): <links> · Member contributions: <table>
+## 4. GitHub Evidence and Contributions
+
+**Repository:** https://github.com/GhilmanShad/SQE_Assignment_2
+
+### Group Members and Contributions
+
+| Group Member | Contributions |
+|---|---|
+| Ghilman Shad Ali | Black-Box Testing |
+| Mohammad Ramzan | GitHub Workflows |
+| Atiq-ur-Rehman | White-Box Testing |
